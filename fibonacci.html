@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Verificador de Sequência de Fibonacci</h2>
+
+<p>Insira um número:</p>
+
+<input id="num" type="text">
+
+<button onclick="checkFibonacci()">Verificar</button>
+
+<p id="result"></p>
+
+<script>
+function checkFibonacci() {
+  var num = document.getElementById("num").value;
+  var fib = [0, 1];
+  var i = 2;
+
+  while (fib[i - 1] < num) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+    i++;
+  }
+
+  if (fib.includes(Number(num))) {
+    document.getElementById("result").innerHTML = num + " pertence à sequência de Fibonacci.";
+  } else {
+    document.getElementById("result").innerHTML = num + " não pertence à sequência de Fibonacci.";
+  }
+}
+</script>
+
+</body>
+</html>
+
