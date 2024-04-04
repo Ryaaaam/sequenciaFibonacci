@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Verificador de Fibonacci</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
+    <div>
+        <input id="number" type="number" placeholder="Digite um número" />
+        <button onclick="checkFibonacci()">Verificar</button>
+        <p id="result"></p>
+    </div>
 
-<h2>Verificador de Sequência de Fibonacci</h2>
-
-<p>Insira um número:</p>
-
-<input id="num" type="text">
-
-<button onclick="checkFibonacci()">Verificar</button>
-
-<p id="result"></p>
-
-<script>
-function checkFibonacci() {
-  var num = document.getElementById("num").value;
-  var fib = [0, 1];
-  var i = 2;
-
-  while (fib[i - 1] < num) {
-    fib[i] = fib[i - 1] + fib[i - 2];
-    i++;
-  }
-
-  if (fib.includes(Number(num))) {
-    document.getElementById("result").innerHTML = num + " pertence à sequência de Fibonacci.";
-  } else {
-    document.getElementById("result").innerHTML = num + " não pertence à sequência de Fibonacci.";
-  }
-}
-</script>
-
+    <script>
+        function checkFibonacci() {
+            var num = document.getElementById('number').value;
+            var fib = [0, 1];
+            while (fib[fib.length - 1] < num) {
+                fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+            }
+            if (fib.includes(parseInt(num))) {
+                document.getElementById('result').innerText = num + ' pertence à sequência de Fibonacci.';
+            } else {
+                document.getElementById('result').innerText = num + ' não pertence à sequência de Fibonacci.';
+            }
+        }
+    </script>
 </body>
 </html>
-
