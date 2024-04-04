@@ -21,20 +21,19 @@
         <button onclick="checkFibonacci()">Verificar</button>
         <p id="result"></p>
     </div>
-
-    <script>
-        function checkFibonacci() {
-            var num = document.getElementById('number').value;
-            var fib = [0, 1];
-            while (fib[fib.length - 1] < num) {
-                fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
-            }
-            if (fib.includes(parseInt(num))) {
-                document.getElementById('result').innerText = num + ' pertence à sequência de Fibonacci.';
-            } else {
-                document.getElementById('result').innerText = num + ' não pertence à sequência de Fibonacci.';
-            }
-        }
-    </script>
 </body>
+<script>
+    function checkFibonacci() {
+        var num = document.getElementById('number').value;
+        var fib = [0, 1];
+        while (fib[fib.length - 1] < num) {
+            fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+        }
+        if (fib.includes(parseInt(num))) {
+            document.getElementById('result').innerText = num + ' pertence à sequência de Fibonacci.';
+        } else {
+            document.getElementById('result').innerText = num + ' não pertence à sequência de Fibonacci.';
+        }
+        }
+</script>
 </html>
